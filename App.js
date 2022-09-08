@@ -14,11 +14,37 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
-          <Stack.Screen name="MealsOverView" component={MealsOverViewScreen} />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: "#351401" }, //title backgorund color
+            headerTintColor: "white", //title color
+            contentStyle: {
+              backgroundColor: "#351401",
+            } /*backgroud color screen*/,
+            //Stack.Navigator option dammama defualt style ekak wage hama screen ekatama add wenawa
+          }}
+        >
+          <Stack.Screen
+            name="MealsCategories"
+            component={CategoriesScreen}
+            options={{
+              title: "All Categories",
+            }}
+          />
+          <Stack.Screen
+            name="MealsOverView"
+            component={MealsOverViewScreen}
+            // options={({ route, navigation }) => {
+            //   //CategoriesScreen eka navigation prop eke data eka methanin access karanna puluwan
+            //   const catID = route.params.categoryId;
+
+            //   return {
+            //     title: catID,
+            //   }; //return options like we use in Stack.Navigator
+            // }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

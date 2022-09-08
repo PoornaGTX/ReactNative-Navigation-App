@@ -5,3 +5,13 @@ next - npm install react-native-screens react-native-safe-area-context
 npx react-native start --reset-cache for if not working navigation
 
 next -   @react-navigation/native-stack
+
+to get image with internet - <Image source={{ uri: imageUrl }} />
+
+overflow: "hidden" ----- //make user that content not going outside in container
+
+screen components has route and navigation
+
+useLayoutEffect() ---- this is also like useEffect same process. but we use useLayoutEffect() in some senario becuse api 
+screen eka update karnakota kalin thibba value eka penila itaa passe ne useEffect eka value eka watenne
+enisa thama useLayoutEffect() use karanne eka nethi wenna.
