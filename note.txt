@@ -1,0 +1,7 @@
+@react-navigation/native package is used to get navigation in react native
+
+next - npm install react-native-screens react-native-safe-area-context 
+
+npx react-native start --reset-cache for if not working navigation
+
+next -   @react-navigation/native-stack
