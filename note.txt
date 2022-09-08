@@ -15,3 +15,5 @@ screen components has route and navigation
 useLayoutEffect() ---- this is also like useEffect same process. but we use useLayoutEffect() in some senario becuse api 
 screen eka update karnakota kalin thibba value eka penila itaa passe ne useEffect eka value eka watenne
 enisa thama useLayoutEffect() use karanne eka nethi wenna.
+
+Text -- cant accept the broder property
