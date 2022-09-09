@@ -19,3 +19,6 @@ enisa thama useLayoutEffect() use karanne eka nethi wenna.
 Text -- cant accept the broder property
 
 import { Ionicons } from "@expo/vector-icons"; -- for icons
+
+
+*** expo doctor --fix-dependencies ** --- to fix dependencys
