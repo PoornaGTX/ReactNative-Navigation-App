@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 
 const Subtitle = ({ children }) => {
-  console.log(children);
   return (
     <View style={styles.subTitleContainer}>
       <Text style={styles.subtitle}>{children}</Text>

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, Button } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 //entire app eka navigateble wenna ona nisa app js eka import karnawa
