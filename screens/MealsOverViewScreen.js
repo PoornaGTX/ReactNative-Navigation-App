@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "react";
-import { View, FlatList, StyleSheet } from "react-native";
-import MealItem from "../components/MealItem";
+import { StyleSheet } from "react-native";
 import { CATEGORIES, MEALS } from "../data/dummy-data";
+import MealsList from "../components/MealsList/MealsList";
 
 const MealsOverViewScreen = ({ route, navigation }) => {
   //we got route prop because we register MealsOverViewScreen as a screen
@@ -26,37 +26,7 @@ enisa thama useLayoutEffect() use karanne eka nethi wenna. */
     navigation.setOptions({ title: categoryTitle });
   }, [categID, navigation]);
 
-  const renderMealItem = (itemData) => {
-    //props godak yawana nis lesi wenna
-    const item = itemData.item;
-
-    const mealItemProps = {
-      id: item.id,
-      title: item.title,
-      imageUrl: item.imageUrl,
-      duration: item.duration,
-      complexity: item.complexity,
-      affordability: item.affordability,
-    };
-    return <MealItem {...mealItemProps} />;
-  };
-
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={displayedMeals}
-        keyExtractor={(item) => item.id}
-        renderItem={renderMealItem}
-      />
-    </View>
-  );
+  return <MealsList items={displayedMeals} />;
 };
 
 export default MealsOverViewScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-});

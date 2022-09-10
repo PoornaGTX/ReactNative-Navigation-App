@@ -15,6 +15,8 @@ import MealsOverViewScreen from "./screens/MealsOverViewScreen";
 import MealDeatailScreen from "./screens/MealDeatailScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
 
+import FavoritesContextProvider from "./store/context/favorites-context";
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -63,26 +65,31 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: "#351401" }, //title backgorund color
-            headerTintColor: "white", //title color
-            contentStyle: {
-              backgroundColor: "#351401",
-            } /*backgroud color screen*/,
-            //Stack.Navigator option dammama defualt style ekak wage hama screen ekatama add wenawa
-          }}
-        >
-          <Stack.Screen
-            name="Drawer"
-            component={DrawerNavigator}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="MealsOverView" component={MealsOverViewScreen} />
-          <Stack.Screen name="MealDetail" component={MealDeatailScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <FavoritesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: "#351401" }, //title backgorund color
+              headerTintColor: "white", //title color
+              contentStyle: {
+                backgroundColor: "#351401",
+              } /*backgroud color screen*/,
+              //Stack.Navigator option dammama defualt style ekak wage hama screen ekatama add wenawa
+            }}
+          >
+            <Stack.Screen
+              name="Drawer"
+              component={DrawerNavigator}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="MealsOverView"
+              component={MealsOverViewScreen}
+            />
+            <Stack.Screen name="MealDetail" component={MealDeatailScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </FavoritesContextProvider>
     </>
   );
 }

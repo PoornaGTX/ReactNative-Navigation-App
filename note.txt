@@ -22,3 +22,7 @@ import { Ionicons } from "@expo/vector-icons"; -- for icons
 
 
 *** expo doctor --fix-dependencies ** --- to fix dependencys
+
+justifyContent:'center' // center the containt vertically
+
+ alignItems: "center", //align items in horizontolly
